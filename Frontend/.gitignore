@@ -2,12 +2,10 @@
 # Node modules (both frontend & backend)
 # -----------------------------
 **/node_modules/
-Frontend/node_modules/
-Backend/node_modules/
 # -----------------------------
 # Environment variables
 # -----------------------------
-Backend/.env
+*.env
 
 # -----------------------------
 # Build outputs
