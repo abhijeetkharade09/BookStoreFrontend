@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons"; // ✅ Correct import
 import Login from "./Login";
+import Logout from "./Logout";
+import { useAuth } from "../context/AuthProvider";
 
 const Navbar = () => {
-
+  const [authUser,setAuthUser] = useAuth();
   const [theme, setTheme]= useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light");
 
   const element = document.documentElement;
@@ -84,7 +86,7 @@ const Navbar = () => {
           </div>
           {/* ✅ Working FontAwesome icon */}
           <a className="text-2xl font-bold cursor-pointer inline-flex items-center space-x-2">
-            <FontAwesomeIcon icon={faBook} style={{ color: "#09a8ec" }} />
+            <FontAwesomeIcon icon={faBook} size='lg' style={{ color: "#3aa0ee" }} />
             <span className="hidden md:block">Wish Book</span>
           </a>
 
@@ -138,11 +140,18 @@ const Navbar = () => {
             </svg>
           </label> 
           &nbsp; &nbsp;
-            <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-blue-400 duration-300 cursor-pointer dark:bg-white dark:text-black"
-            onClick={()=> document.getElementById("my_modal_3").showModal()}
-            >Login</a>
-            <Login/>
-          </div>
+            
+          {
+            authUser?<Logout/>:
+              <>
+                <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-blue-400 duration-300 cursor-pointer dark:bg-white dark:text-black"
+                onClick={()=> document.getElementById("my_modal_3").showModal()}
+                >Login</a>
+                <Login/>
+              </>
+          }
+
+           </div>
        </div>
       </div>
      </div>

@@ -28,7 +28,7 @@ const Banner = () => {
             <input type="text" className="grow" placeholder="Email" />
           </label>
           </div>
-          <button className="btn mt-6 bg-blue-400">Primary</button>
+          <button className="btn mt-6 bg-blue-400">Get Started</button>
         </div>
         <div className='order-1 w-full md:w-1/2'>
             <img src={banner} className='w-160 h-150' alt="" />
