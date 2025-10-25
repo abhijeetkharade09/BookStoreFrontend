@@ -11,6 +11,7 @@
 # -----------------------------
 # Build outputs
 # -----------------------------
+Frontend/dist/
 Frontend/build/
 Backend/dist/
 Backend/build/
