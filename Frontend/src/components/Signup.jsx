@@ -21,7 +21,7 @@ const Signup = () => {
           email:data.email,
           password:data.password,
         }  
-        await axios.post(https://mern-bookstore-backend-8nbj.onrender.com/user/signup", userInfo) // axios.post is used to upload or save user data in database after signup
+        await axios.post("https://mern-bookstore-backend-8nbj.onrender.com/user/signup", userInfo) // axios.post is used to upload or save user data in database after signup
         .then((res)=>{
           console.log(res.data); 
           if(res.data){
