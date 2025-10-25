@@ -37,11 +37,11 @@ app.use("/book",bookRoute); // bookRoute -->book.route.js-->book.controller.js--
 app.use("/user",userRoute); // userRoute -->user.route.js-->user.controller.js-->user.model.js
 
 // Serve React frontend (production)
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // Catch-all route for React Router
 app.get(/^\/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
 // Start server
 const PORT = process.env.PORT || 4000;
