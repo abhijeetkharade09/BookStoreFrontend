@@ -16,7 +16,7 @@ const Login = () => {
           email:data.email,
           password:data.password,
         }  
-        await axios.post("http://localhost:4001/user/login", userInfo) // axios.post is used to upload or save user data after login
+        await axios.post("https://mern-bookstore-backend-8nbj.onrender.com/user/login", userInfo) // axios.post is used to upload or save user data after login
         .then((res)=>{
           console.log(res.data); 
           if(res.data){
