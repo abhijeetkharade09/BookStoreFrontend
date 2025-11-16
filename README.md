@@ -1,2 +1,2 @@
-# BookStoreFrontend
-Created a Frontend BookStore Website using React js
+# BookStore
+Created BookStore Website
